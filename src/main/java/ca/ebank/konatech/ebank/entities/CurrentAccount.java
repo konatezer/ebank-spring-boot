@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 
 //JPA
 @Entity
-//@DiscriminatorValue("CA")
+@DiscriminatorValue("CA")
 public class CurrentAccount extends BankAccount{
     private double overDraft;
 
