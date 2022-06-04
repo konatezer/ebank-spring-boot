@@ -18,7 +18,7 @@ import java.util.List;
 
 //JPA
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 //@DiscriminatorColumn(name = "TYPE", length = 4)
 public abstract class BankAccount {
     @Id
