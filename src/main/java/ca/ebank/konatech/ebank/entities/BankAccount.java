@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +18,14 @@ import java.util.List;
 
 //JPA
 @Entity
-public class BankAccount {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "TYPE", length = 4)
+public abstract class BankAccount {
     @Id
     private String id;
     private double balance;
     private Date createdAt;
+    @Enumerated(EnumType.STRING)
     private AccountStatus status;
     // plusieur compte pour un client
     @ManyToOne
