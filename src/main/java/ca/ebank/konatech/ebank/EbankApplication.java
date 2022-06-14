@@ -6,13 +6,12 @@ import ca.ebank.konatech.ebank.enums.OperationType;
 import ca.ebank.konatech.ebank.repositories.AccountOperationRepository;
 import ca.ebank.konatech.ebank.repositories.BankAccountRepository;
 import ca.ebank.konatech.ebank.repositories.CustomerRepository;
-import ca.ebank.konatech.ebank.services.BankAccountService;
+import ca.ebank.konatech.ebank.services.BankService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.rmi.server.UID;
 import java.util.Date;
 import java.util.UUID;
 import java.util.stream.Stream;
@@ -25,9 +24,9 @@ public class EbankApplication {
     }
 
    @Bean
-    CommandLineRunner commandLineRunner(BankAccountService bankAccountService) {
+    CommandLineRunner commandLineRunner(BankService bankService) {
         return args -> {
-            bankAccountService.consulter();
+            bankService.consulter();
         };
     }
 

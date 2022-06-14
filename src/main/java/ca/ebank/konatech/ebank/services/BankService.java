@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class BankAccountService {
+public class BankService {
     @Autowired
     private BankAccountRepository bankAccountRepository;
     public void consulter(){
